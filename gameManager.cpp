@@ -94,6 +94,7 @@ int main()
 
     //NPC MAP INITIALIZATION
     map.initializeMap("map.txt"); 
+    map.initializeTitle("title.txt");
     map.initializePlayer(player.getXPos(),player.getYPos()); 
     map.initalizeNPC(41,14,ANSI_RED);
     map.initalizeNPC(65,10,ANSI_ORANGE);

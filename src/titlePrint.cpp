@@ -17,3 +17,18 @@ void TitlePrint::initializeTitle(const string & titleFile) {
 
     inFS.close();
 }
+
+std::string TitlePrint::getTitle(const std::string& titleFile) {
+    std::ifstream inFS(titleFile);
+    std::string read;
+    std::string result;
+
+    while (inFS) {
+        std::getline(inFS, read);
+        result += "\033[34m";      // blue
+        result += read;
+        result += "\033[0m\n";     // reset + newline
+    }
+
+    return result;
+}

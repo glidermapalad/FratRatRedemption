@@ -5,5 +5,6 @@
 class TitlePrint {
     public:
         void initializeTitle(const string &);
+        string getTitle(const string &); 
 };
 #endif

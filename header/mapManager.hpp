@@ -15,6 +15,8 @@ class mapManager{
         int moralityRange; 
         int reputationRange; 
 
+        string titleText; 
+
     public:
         mapManager();
         ~mapManager(); 
@@ -32,6 +34,8 @@ class mapManager{
 
         void setMapReputationRange(const int &); 
         void updateMapReputation(const int &); 
+
+        void initializeTitle(const string &);
 };
 
 #endif

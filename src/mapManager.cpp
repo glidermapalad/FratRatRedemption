@@ -42,6 +42,11 @@ void mapManager::initializeMap(const string & mapFile){
     inFS.close(); 
 }
 
+void mapManager::initializeTitle(const string & titleFile){
+    TitlePrint title;
+    titleText = title.getTitle(titleFile);
+}
+
 void mapManager::initializePlayer(const int & initialXPos, const int & initialYPos){
     mapXY[initialYPos][initialXPos].togglePlayerActive(); 
 }
@@ -66,32 +71,67 @@ void mapManager::removePlayer(const int & currXPos, const int & currYPos){
 
 void mapManager::printMap(const string & currentDefaultColor) const{ // WAS TOLD BY GARRET THAT PUTTING PRINT IN HERE IS OK
     std::cout<<ANSI_CLEAR_TERMINAL;
+    //std::system("clear");
 
     TitlePrint title;
-    title.initializeTitle("./title.txt");
+    //title.initializeTitle("./title.txt");
     cout << currentDefaultColor;
     
-    for(int i = 0; i<23;i++){
-        for(int j = 0; j <100; j++){
-            if(!mapXY[i][j].getPlayerActive()){
-                if(mapXY[i][j].getCoordColor()==ANSI_DEFAULT_TERMINAL_COLOR){
-                    std::cout<<mapXY[i][j].getCoordCharacter(); 
-                } else {
-                    std::cout<<mapXY[i][j].getCoordColor()<<mapXY[i][j].getCoordCharacter()<<currentDefaultColor;
-                }
+    // for(int i = 0; i<23;i++){
+    //     for(int j = 0; j <100; j++){
+    //         if(!mapXY[i][j].getPlayerActive()){
+    //             if(mapXY[i][j].getCoordColor()==ANSI_DEFAULT_TERMINAL_COLOR){
+    //                 std::cout<<mapXY[i][j].getCoordCharacter(); 
+    //             } else {
+    //                 std::cout<<mapXY[i][j].getCoordColor()<<mapXY[i][j].getCoordCharacter()<<currentDefaultColor;
+    //             }
                 
-            } else {
-                if(!mapXY[i][j].getContainsNPC()){
-                    std::cout<<"@"; 
-                } else {
-                    std::cout<<mapXY[i][j].getCoordColor()<<"@"<<currentDefaultColor;
-                }
+    //         } else {
+    //             if(!mapXY[i][j].getContainsNPC()){
+    //                 std::cout<<"@"; 
+    //             } else {
+    //                 std::cout<<mapXY[i][j].getCoordColor()<<"@"<<currentDefaultColor;
+    //             }
                 
-            }
+    //         }
             
+    //     }
+    //     std::cout<<"\n";
+    // }
+
+    std::string out;
+    // //out.reserve(4000);                  // adjust upward if needed
+
+    out += "\x1b[H";                    // go to top-left (no scrolling)
+
+    //TitlePrint title;
+    out += titleText; 
+    out += currentDefaultColor;
+
+    for (int i = 0; i < 23; i++) {
+        for (int j = 0; j < 100; j++) {
+            if (!mapXY[i][j].getPlayerActive()) {
+                if (mapXY[i][j].getCoordColor() == ANSI_DEFAULT_TERMINAL_COLOR) {
+                    out += mapXY[i][j].getCoordCharacter();
+                } else {
+                    out += mapXY[i][j].getCoordColor();
+                    out += mapXY[i][j].getCoordCharacter();
+                    out += currentDefaultColor;
+                }
+            } else {
+                if (!mapXY[i][j].getContainsNPC()) {
+                    out += "@";
+                } else {
+                    out += mapXY[i][j].getCoordColor();
+                    out += "@";
+                    out += currentDefaultColor;
+                }
+            }
         }
-        std::cout<<"\n";
+        out += '\n';
     }
+
+    std::cout << out;
 }
 
 void mapManager::setMapMoralityRange(const int & newRange){
