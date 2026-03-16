@@ -374,13 +374,19 @@ string npc::getType() {
     return npcType;
 }
 
-void npc::printDialogue(int num) {
+//num == the dialogue currently selected
+void npc::printDialogue(int num, int selectedDialogueOption) {
     cout << dialogue[num] << endl << endl;
     if (num < 4) {
         cout << "\033[1m" << "\033[33m" << "Use W and S to select a response. Press enter to confirm.\n\n" << "\033[0m";
         cout << "Choose a response:" << endl;
         for (int i = 0; i < 4; ++i) {
-        cout << " " << i + 1 << " - " << responses[num][i] << endl;
+            if (i == selectedDialogueOption){
+                cout <<"\033[1m" << "\033[33m" << " " << i + 1 << " - " << responses[num][i] <<"\033[0m" << endl;
+            } else {
+                cout << " " << i + 1 << " - " << responses[num][i] << endl;
+            }
+            
         }
     }
 }

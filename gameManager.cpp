@@ -63,7 +63,7 @@ void interactionOptionAdjust(int & currentOptionSelected, const int & directionI
 
 int main()
 {
-    clearTerminal(); 
+    clearTerminal();
 
     //PLAYER CUSTOMIZATION
     PlayerManager playerInfo;
@@ -91,6 +91,9 @@ int main()
 
     bool primaryLoopFlag = 1; 
     int gameMode = 0; //-1 == off; 0 == map; 1 == interaction
+
+    //hide cursor
+    std::cout << "\x1b[?25l" << std::flush;
 
     //NPC MAP INITIALIZATION
     map.initializeMap("map.txt"); 
@@ -204,19 +207,19 @@ int main()
 
             if (dialogueState == 0) {
                 InteractingNPC.printIntroduction();
-                InteractingNPC.printDialogue(dialogueState);
+                InteractingNPC.printDialogue(dialogueState,selectedInteractionOption);
             }
             if (dialogueState == 1) {
-                InteractingNPC.printDialogue(dialogueState);
+                InteractingNPC.printDialogue(dialogueState,selectedInteractionOption);
             }
             if (dialogueState == 2) {
-                InteractingNPC.printDialogue(dialogueState);
+                InteractingNPC.printDialogue(dialogueState,selectedInteractionOption);
             }
             if (dialogueState == 3) {
-                InteractingNPC.printDialogue(dialogueState);
+                InteractingNPC.printDialogue(dialogueState,selectedInteractionOption);
             }
             if (dialogueState == 4) {
-                InteractingNPC.printDialogue(dialogueState);
+                InteractingNPC.printDialogue(dialogueState,selectedInteractionOption);
                 cout << "\033[1m" << "\033[33m" << "Press enter to continue.\n" << "\033[0m";
 
             }
@@ -275,8 +278,11 @@ int main()
     EndingManager ending(playerManager.getPlayerRep(), playerManager.getPlayerMor(), playerManager.getPopularRep(), playerManager.getNormieRep(), playerManager.getOutcastRep(), playerManager.getPlayerType());
 
     ending.printEnding();
-    
+
+    //show cursor
+    std::cout << "\x1b[?25h" << std::flush;
     cout << "\n";
+
 
     return 0; 
 }

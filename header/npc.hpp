@@ -16,7 +16,7 @@ class npc {
         npc(mapManager &map, coord id);
         string getName();
         string getType();
-        void printDialogue(int);
+        void printDialogue(int,int);
         string getIntroduction();
         void printIntroduction();
 };
