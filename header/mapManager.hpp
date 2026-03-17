@@ -27,7 +27,7 @@ class mapManager{
         void removePlayer(const int &, const int &); 
         void initalizeNPC(const int &, const int &, const string &);
         void deactivateNPC(const int &, const int &); 
-        void printMap(const string &) const; 
+        void printMap(const string &, const string & footerText = "") const; 
 
         void setMapMoralityRange(const int &); 
         void updateMapMorality(const int &); 

@@ -69,7 +69,7 @@ void mapManager::removePlayer(const int & currXPos, const int & currYPos){
         mapXY[currYPos][currXPos].togglePlayerActive(); 
  }
 
-void mapManager::printMap(const string & currentDefaultColor) const{ // WAS TOLD BY GARRET THAT PUTTING PRINT IN HERE IS OK
+void mapManager::printMap(const string & currentDefaultColor, const string & footerText) const{ // WAS TOLD BY GARRET THAT PUTTING PRINT IN HERE IS OK
     std::cout<<ANSI_CLEAR_TERMINAL;
     //std::system("clear");
 
@@ -129,6 +129,12 @@ void mapManager::printMap(const string & currentDefaultColor) const{ // WAS TOLD
             }
         }
         out += '\n';
+    }
+
+    if (!footerText.empty()) {
+        out += footerText;
+        if (footerText.back() != '\n') out += '\n';
+        out += ANSI_DEFAULT_TERMINAL_COLOR;
     }
 
     std::cout << out;

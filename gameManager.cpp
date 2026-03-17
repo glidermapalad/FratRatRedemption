@@ -133,8 +133,7 @@ int main()
         //map.printMap(); 
         while(gameMode == 0){ //MAP LOOP
             selectedInteractionOption = 0; 
-            map.printMap(ANSI_DEFAULT_TERMINAL_COLOR);
-            cout << "\033[1m" << "\033[33m" << "Use WASD to move. Press esc to quit the game.\n" << "\033[0m";
+            map.printMap(ANSI_DEFAULT_TERMINAL_COLOR, "\033[1m\033[33mUse WASD to move. Press esc to quit the game.\n\033[0m");
 
             if(((player.getXPos()==61||player.getXPos()==62||player.getXPos()==60) && player.getYPos()==3)){
                 mapClock.timerOff(); 
@@ -199,9 +198,7 @@ int main()
 
         int dialogueState = 0;
         while(gameMode==1){//INTERACTION LOOP (to be edited to accommodate textManager)
-            cout<<ANSI_GREY;
-            map.printMap(ANSI_GREY); 
-            cout<<ANSI_DEFAULT_TERMINAL_COLOR;
+            map.printMap(ANSI_GREY, "\033[37m\033[1mUse W/S to select options, Enter to confirm.\n\033[0m");
 
             npc InteractingNPC (map, map.getXYCoord(player.getXPos(),player.getYPos()));
 
