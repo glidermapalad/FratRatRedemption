@@ -1,5 +1,3 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=10869008&assignment_repo_type=AssignmentRepo)
- 
 # Frat Rat Redemption
  
  > Authors: [Glider Mapalad](https://github.com/gmapa002), [Emily Hix](https://github.com/emilyhix), [Emily Clark](https://github.com/emii331), [Sabaipon Phimmala](https://github.com/bphimmala)
@@ -7,11 +5,7 @@
 ## Project Description
 **General Description:**
 
-_You did it! You bore through the first week of school and made it to the most popular fraternity, Χαζος (/xazós/), 's first rager of the year! College life is just how you imagined it back in high school, things couldn't get any better!_
-
-_However, a challenge is placed before you that you never expected! You are at your first party, but notice something strange. People are awfully cliquey!!! You thought everyone left that behind in high school, alas, there are completely different groups of people that barely overlap. Only you can decide who you really belong with._
-
-_Are you going to fit in?! Or will everyone shun you forever?! Find out in Frat Rat Redemption, the "try to desperately fit in with everyone" RPG simulator game! Customize your character! Balance your personal morals with your reputation! Resist the temptation and try your very hardest NOT to be a total prick to everyone around you! What kind of college student will you become? Find out in "FRAT RAT REDEMPTION!"_
+_You did it! You bore through the first week of school and made it to the most popular fraternity's first rager of the year! Are you going to fit in?! Or will everyone shun you forever?! Find out in **FRAT RAT REDEMPTION**, the "try to fit in with everyone" RPG simulator game!_
 
 Frat Rat Redemption is a terminal-based RPG in which the user plays as a party goer who tries to navigate their way through  their first college party. The goal of the game is to leave the frat house. The user must navigate through a top-down view of a frat house layout populated with interactable NPCs which are the attendees of the party. There are two stats that the user must balance: Morality and Reputation. You start with mid-leveled morality and zero reputation. To gain reputation points, you must interact with NPCs which initiate a quick-time-event in which the user chooses responses based on the dialogue the NPC says. Depending on the interaction, the reputation and/or morality will be affected. You must gain and/or maintain the highest morality and reputation you can before you leave the frat house. Depending on your results as you leave the house, different endings will play and you get to see what happens to your character.
 
@@ -50,20 +44,21 @@ Ending screen - there will be an exit door in the ascii-based level which the us
 ## User Interface Specification
 
 ### Navigation Diagram
-<img width="955" alt="nav1" src="https://github.com/cs100/final-project-ehix001-sphim001-gmapa002-eclar022/assets/114962480/3fc499cf-553f-4cf2-aed1-55b81c29e74a">
+<img width="955" height="533" alt="FRRNavigationDiagram" src="https://github.com/user-attachments/assets/04015076-ae9a-4dea-98b8-8cbcbd550e7c" />
 
 This diagram is a state machine of the different screens that the user will be able to see in this program. There are only 4 states. The text next to each arrow represents the condition required to transition to that screen. 
 
 
 ### Screen Layouts
-![player cust screen](https://github.com/cs100/final-project-ehix001-sphim001-gmapa002-eclar022/assets/129914502/ef04aafa-058f-4b39-87ad-827d14ddae23)
+<img width="862" height="649" alt="FRRScreenLayouts" src="https://github.com/user-attachments/assets/0981bb6d-97ca-4ca6-bd53-8954ca027bdd" />
 This is the first screen the player will go through.
 
-![in game screen layout](https://github.com/cs100/final-project-ehix001-sphim001-gmapa002-eclar022/assets/129914502/0ae4ca34-816e-43fc-9703-9fd74ca931e0)
+<img width="870" height="576" alt="FRRScreenLayouts1" src="https://github.com/user-attachments/assets/a7df0837-1512-4626-863b-b02b21514129" />
 As stated, this is the general screen that will be shown! Other modes of this screen are shown below under the Screenshots section.
 
 ## Class Diagram
-![cs100 uml diagram](https://github.com/cs100/final-project-ehix001-sphim001-gmapa002-eclar022/assets/129914502/cdf32f99-a58b-4ae4-bd67-5f307d8c387c)
+<img width="1965" height="2400" alt="FRRClassDiagram" src="https://github.com/user-attachments/assets/2ec6d9cf-83b5-4b2c-8fe3-b7883349acd3" />
+
 
 
 Above is the UML class diagram for the FRAT RAT REDEMPTION program. The functionality of the program is largely based on time. That is because this program is heavily dependent on a top-down visual of the in-game environment in which the user can control a "character" which is able to move around and interact with the characters in the generated environment. To create the illusion of visible movement in this in-game environment, it is essential for time to be a primary feature.In gameManager, we will create a gameClock object and use its member functions in a while loop to have the game infinitely repeat until exited (timerISR and timerOn).  This function starts a loop which will execute with a frequency of 10 ticks per second. This function will always run until the timerOff() function is called. During each tick, the class will detect which key is being pressed and store it in the "keyboardInput" char. This will allow for seamless key inputs without requiring the user to press "enter" between each input.
@@ -98,25 +93,25 @@ Lastly, characterCustom was renamed "playerCustom" to better fit what the class 
  
  ## Screenshots
  
-| ![customizationScreen](https://github.com/cs100/final-project-ehix001-sphim001-gmapa002-eclar022/assets/114962480/93b1c28f-d270-4c10-bf5c-755fe91aa4ef) | 
+| <img width="1071" height="491" alt="FRRScreenshot1" src="https://github.com/user-attachments/assets/ba2f51c5-8606-486f-b513-22be4612efb5" /> | 
 |:--:| 
 | The player must choose what type of person they want to be - this choice affects the result of dialogue options with non-player characters. |
 
-| ![mainMap](https://github.com/cs100/final-project-ehix001-sphim001-gmapa002-eclar022/assets/114962480/101239f6-fd9f-44ac-ad05-c9da0491e56b) | 
+| <img width="1127" height="787" alt="FRRScreenshot2" src="https://github.com/user-attachments/assets/0d62881c-f633-44cc-9161-408c4be2b2d0" /> | 
 |:--:| 
 | The player is free to explore the map with live character input using WASD. |
 
-| ![dialogueScreen](https://github.com/cs100/final-project-ehix001-sphim001-gmapa002-eclar022/assets/114962480/9fa85544-129a-4ab9-b48c-470cbef84326) | 
+|<img width="1116" height="565" alt="FRRScreenshot3" src="https://github.com/user-attachments/assets/11de49b6-b3f2-404f-9f17-025d1d795fa0" /> | 
 |:--:| 
 | Converse with 10 distinct non-player characters with unique personalities. |
 
-| ![endingScreen](https://github.com/cs100/final-project-ehix001-sphim001-gmapa002-eclar022/assets/114962480/fe41f64a-33c8-4b52-9221-abebf445e2dd) | 
+| <img width="1113" height="640" alt="FRRScreenshot4" src="https://github.com/user-attachments/assets/c382d94a-351f-4968-b61d-0b8c63bc0827" /> | 
 |:--:| 
 | The ending of the game is determined by the player's morality and reputation attributes, which are affected by choice of player type and conversations with npc partygoers. |
 
  ## Installation/Usage
  **To play Frat Rat Redemption:**
- 1. Clone the repository using `git clone https://github.com/cs100/final-project-ehix001-sphim001-gmapa002-eclar022.git`
+ 1. Clone the repository using `git clone https://github.com/glidermapalad/FratRatRedemption1.git`
  2. Run `cmake .` and `make` for this repository
  3. Run the `./run` executable
  4. Follow the in-game instructions and have fun!
