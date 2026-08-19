@@ -111,7 +111,7 @@ Lastly, characterCustom was renamed "playerCustom" to better fit what the class 
 
  ## Installation/Usage
  **To play Frat Rat Redemption:**
- 1. Clone the repository using `git clone https://github.com/glidermapalad/FratRatRedemption1.git`
+ 1. Clone the repository using `git clone https://github.com/glidermapalad/FratRatRedemption.git`
  2. Run `cmake .` and `make` for this repository
  3. Run the `./run` executable
  4. Follow the in-game instructions and have fun!
