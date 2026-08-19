@@ -109,7 +109,10 @@ Lastly, characterCustom was renamed "playerCustom" to better fit what the class 
 |:--:| 
 | The ending of the game is determined by the player's morality and reputation attributes, which are affected by choice of player type and conversations with npc partygoers. |
 
- ## Installation/Usage
+ ## Installation/Usage 
+
+ > [!Note]
+> This project is limited to Linux Systems
  **To play Frat Rat Redemption:**
  1. Clone the repository using `git clone https://github.com/glidermapalad/FratRatRedemption.git`
  2. Run `cmake .` and `make` for this repository
