@@ -112,7 +112,8 @@ Lastly, characterCustom was renamed "playerCustom" to better fit what the class 
  ## Installation/Usage 
 
  > [!Note]
-> This project is limited to Linux Systems
+ > This project is limited to Linux Systems
+
  **To play Frat Rat Redemption:**
  1. Clone the repository using `git clone https://github.com/glidermapalad/FratRatRedemption.git`
  2. Run `cmake .` and `make` for this repository
