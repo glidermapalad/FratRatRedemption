@@ -119,7 +119,3 @@ Lastly, characterCustom was renamed "playerCustom" to better fit what the class 
  2. Run `cmake .` and `make` for this repository
  3. Run the `./run` executable
  4. Follow the in-game instructions and have fun!
- 
- ## Testing
-
-Our project was tested using the Googletest framework. For each class implemented into the project, a separate test file was created and unit tests were developed to test all non-I/O code. The executable ./runAllTests was added to CMakeLists.txt to run every test at once.
