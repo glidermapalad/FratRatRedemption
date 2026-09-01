@@ -4,10 +4,18 @@
 
 ## Demo
 
-
 https://github.com/user-attachments/assets/9a110ee8-4835-42e9-8751-ba9c97752eeb
 
+ ## Installation/Usage 
 
+ > [!Note]
+ > This project is limited to Linux Systems
+
+ **To play Frat Rat Redemption:**
+ 1. Clone the repository using `git clone https://github.com/glidermapalad/FratRatRedemption.git`
+ 2. Run `cmake .` and `make` for this repository
+ 3. Run the `./run` executable
+ 4. Follow the in-game instructions and have fun!
 
 
 
@@ -117,14 +125,3 @@ Lastly, characterCustom was renamed "playerCustom" to better fit what the class 
 | <img width="1113" height="640" alt="FRRScreenshot4" src="https://github.com/user-attachments/assets/c382d94a-351f-4968-b61d-0b8c63bc0827" /> | 
 |:--:| 
 | The ending of the game is determined by the player's morality and reputation attributes, which are affected by choice of player type and conversations with npc partygoers. |
-
- ## Installation/Usage 
-
- > [!Note]
- > This project is limited to Linux Systems
-
- **To play Frat Rat Redemption:**
- 1. Clone the repository using `git clone https://github.com/glidermapalad/FratRatRedemption.git`
- 2. Run `cmake .` and `make` for this repository
- 3. Run the `./run` executable
- 4. Follow the in-game instructions and have fun!
