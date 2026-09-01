@@ -2,6 +2,15 @@
  
  > Authors: [Glider Mapalad](https://github.com/gmapa002), [Emily Hix](https://github.com/emilyhix), [Emily Clark](https://github.com/emii331), [Sabaipon Phimmala](https://github.com/bphimmala)
 
+## Demo
+
+
+https://github.com/user-attachments/assets/9a110ee8-4835-42e9-8751-ba9c97752eeb
+
+
+
+
+
 ## Project Description
 **General Description:**
 
